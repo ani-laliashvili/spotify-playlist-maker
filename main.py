@@ -3,7 +3,11 @@ import requests
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-CHART_NAME = 'hot-100' 
+CLIENT_ID = "MYCLIENTID"
+CLIENT_SECRET = "MYCLIENTSECRET"
+REDIRECT_URI = "https://example.com/"
+
+CHART_NAME = 'hot-100'
 
 ############# GET SONGS ################
 date = ''
@@ -26,9 +30,9 @@ OAUTH_AUTHORIZE_URL= 'https://accounts.spotify.com/authorize'
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
-        redirect_uri="https://example.com/",
-        client_id="MYCLIENTID",
-        client_secret="MYCLIENTSECRET",
+        redirect_uri=REDIRECT_URI,
+        client_id=CLIENT_ID,
+        client_secret=CLIENT_SECRET,
         show_dialog=True,
         cache_path="token.txt"
     )
