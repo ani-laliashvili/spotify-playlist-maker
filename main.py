@@ -38,7 +38,7 @@ sp = spotipy.Spotify(
     )
 )
 
-###### check if playlist already exists     ########
+###### CHECK IF PLAYLIST ALREADY EXISTS  ########
 user_id = sp.current_user()['id']
 playlists = sp.user_playlists(user=user_id)['items']
 playlist_name_found = False
